@@ -1,0 +1,17 @@
+import numpy as np
+from matplotlib import pyplot as plt
+import scipy.stats
+from scipy import stats
+import os
+import csv
+file = open('……’)
+type(file)
+data = np.loadtxt('…...',',usecols=[1,2])
+ph = data[:,1]
+bry = data[:,0]
+m,c=np.polyfit(ph,bry,1)
+plt.scatter(ph,bry,edgecolors = 'black', marker='o', color='cyan')
+plt.plot(ph,m*ph+c, color='black')
+plt.xlabel('Bark pH')
+plt.ylabel('Bryophyte Count (per tree)')
+stats.pearsonr(ph,bry)
